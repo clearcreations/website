@@ -11,10 +11,14 @@
 *{
     margin: 0;
     box-sizing: border-box;
-    background-color: #0e0e0e;
+    /* background-color: #0e0e0e; */
     color: var(--text-color);
     overflow-x: hidden;
     /* white-space: nowrap; */
+}
+
+.app{
+    background-color: var(--bg-color);
 }
 
 ::-webkit-scrollbar{
@@ -67,6 +71,11 @@ a{
     cursor: pointer;
 }
 
+li{
+    list-style: none;
+    background: none;
+}
+
 .emphasize{
     font-family: var(--primary-font);
     font-size: 4rem;
@@ -109,10 +118,11 @@ a{
 }
 
 .btn-droplet{
-    padding-right: 15px;
+    padding-right: 5px;
     z-index: 0;
     width: 41px;
     height: 24px;
+    /* background: none; */
 }
 
 .consult-btn h4{
@@ -122,30 +132,39 @@ a{
 }
 
 /* Header Component */
-.header{
-    width: 80%;
-    margin: auto;
-}
-
-.nav{
+.nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 100px;
-    /* white-space: nowrap; */
+    justify-content: space-between;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    padding: 50px 0;
 }
 
-.nav-logo{
-    width: 30%;
+.nav-logo-img{
+    width: 35%;
 }
-
-.nav-menu{
+  
+.nav__menu {
     display: flex;
+    align-items: center;
+    gap: 2rem;
+    white-space: nowrap;
+}
+  
+.nav__toggler {
+    display: none;
+}
+  
+.nav__toggler div {
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background: var(--text-color);
+    transition: 0.3s ease-in;
 }
 
-.nav-link{
-    padding: 0 50px;
-}
 
 /* Footer Component */
 .footer{
@@ -235,12 +254,11 @@ a{
 }
 
 .hero-right{
-    display: block;
-    width: 500px;
-    height: 500px;
+    height: 100%;
 }
 
 .hero-left{
+    width: 60%;
     height: 100%;
     padding: 200px 0;
 }
@@ -250,13 +268,13 @@ a{
 }
 
 .hero-body{
-    width: 580px;
+    width: 100%x;
     margin-bottom: 25px;
 }
 
 .scroll-indicator{
     width: 15px;
-    padding-top: 250px;
+    padding-top: 20%;
     padding-bottom: 10px;
 	position: relative;
 	opacity: 0.5;
@@ -356,9 +374,18 @@ a{
     width: 50%;
 }
 
-.the-brand-right p{
-    width: 480px;
+.the-brand-left-text{
+    width: 80%;
+}
+
+.the-brand-right{
+    width: 50%;
     margin-bottom: 25px;
+}
+
+.the-brand-right-text{
+    float: right;
+    width: 70%;
 }
 
 .image-container{
@@ -389,23 +416,73 @@ a{
     padding: 150px 0;
 }
 
-.industry-grid{
+.industries-section{
     width: 100%;
-    max-height: 900px;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    margin: auto;
+}
+
+.industries-section-top{
+    width: 80%;
+    margin: auto;
+}
+
+.industry-grid{
+    width: 80%;
+    margin: 100px auto 0 auto;
 }
 
 .industry-card{
-    position: relative;
     width: 100%;
-    padding: 10px;
+    height: 450px ;
+    overflow-y: hidden;
+    margin: 10px;
+    position: relative;
 }
 
-.industry-img{
-    display: block;
+.industry-card .food-bev-img{
+    height: 100%;
     width: 100%;
+    background-image: url(./Images/foodbev.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.industry-card .non-profit-img{
+    height: 100%;
+    width: 100%;
+    background-image: url(./Images/nonprofit.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+.industry-card .cannabis-img{
+    height: 100%;
+    width: 100%;
+    background-image: url(./Images/cannabis.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.industry-card .tech-img{
+    height: 100%;
+    width: 100%;
+    background-image: url(./Images/technology.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grid-left,
+.grid-right{
+    display: flex;
+}
+
+.industry-title{
+    font-size: 2rem;
+}
+
+.industry-description{
+    font-size: 1.25rem;
 }
 
 .card-overlay{
@@ -417,41 +494,50 @@ a{
     background: rgba(14, 14, 14, 0.6);
     opacity: 0;
     transition: opacity 0.25s ease-in-out;
+    overflow: hidden;
 }
 
 .card-overlay p{
     background: none;
     padding: 5px 25px;
+    overflow: hidden;
 }
 
 .card-overlay .industry-description{
     width: 80%;
+    overflow: hidden;
 }
 
 .blur{
     backdrop-filter: blur(3px);
+    overflow: hidden;
 }
 
 .card-overlay > * {
     transform: translateY(20px);
     transition: transform 0.25s;
+    overflow: hidden;
 }
 
 .card-overlay:hover {
     opacity: 1;
+    overflow: hidden;
 }
 
 .card-overlay:hover{
     transform: translateY(0);
+    overflow: hidden;
 }
 
 .card-overlay p:hover{
     opacity: 1;
+    overflow: hidden;
 }
 
 .what-we-do{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 100px;
 }
 
@@ -459,9 +545,18 @@ a{
     width: 50%;
 }
 
-.what-we-do-right p{
-    width: 480px;
+.what-we-do-left-text{
+    width: 80%;
+}
+
+.what-we-do-right{
+    width: 50%;
     margin-bottom: 25px;
+}
+
+.what-we-do-right-text{
+    float: right;
+    width: 70%;
 }
 
 .services-tabs{
@@ -491,6 +586,7 @@ a{
     font-weight: 300;
     padding: 0 40px 0 0;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .home-tabs-nav li h4:hover,
@@ -500,6 +596,7 @@ a{
 }
 
 .tab-content{
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -513,21 +610,24 @@ a{
 }
 
 .tab-left .body-lg{
-    width: 80%;
+    width: 100%;
     margin-bottom: 25px;
 }
 
 .tab-right{
     width: 100%;
-    display: flex;
-    justify-content: center;
+    position: relative;
+}
+
+.tab-cards{
+    float: right;
 }
 
 .card{
     width: 400px;
     display: flex;
     padding: 25px;
-    margin: 25px 0;
+    margin-bottom: 25px;
     align-items: center;
     box-shadow: 
     -2px 0px 4px 0 rgba(0, 0, 0, 0.25),
@@ -582,18 +682,19 @@ a{
 
 form .form-row{
     display: flex;
-    margin: 25px 0;
+    margin: 0;
 }
 
 form .form-row .input-data{
     width: 100%;
     height: 50px;
-    margin: 0 15px 0 0;
+    margin: 25px 15px 0 0;
     position: relative;
 }
 
 form .form-row .textarea{
     height: 50px;
+    margin-bottom: 25px;
 }
 
 .input-data input,
@@ -604,6 +705,7 @@ form .form-row .textarea{
     border: none;
     font-size: 0.87rem;
     border-bottom: 2px solid var(--text-color);
+    background-color: var(--bg-color);
 }
 
 .input-data label{
@@ -687,4 +789,303 @@ input:-webkit-autofill{
     background: none;
     border: 5px solid #0E0E0E;
     border-radius: 50%;
+}
+
+/* Media Queries */
+
+/* Header Component */
+@media screen and (max-width: 900px) {
+    .nav__toggler {
+        display: block;
+        cursor: pointer;
+        z-index: 10;
+        background: none;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        background: var(--sapphire);
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: 0.5s ease-in;
+        z-index: 9;
+        padding: 0;
+    }
+
+    .nav__menu li:first-child{
+        margin-top: 125px;
+    }
+
+    .nav__menu li{
+        padding: 25px 0;
+    }
+    
+    /* Active Class */
+    .nav__active {
+        transform: translateX(0%);
+    }
+    
+    /* Toggle Icon Animation */
+    
+    .toggle .line1 {
+    transform: rotate(-45deg) translate(-4px, 5px);
+    }
+    .toggle .line2 {
+    opacity: 0;
+    }
+    .toggle .line3 {
+    transform: rotate(45deg) translate(-8px, -10px);
+    }
+}
+
+/* Footer Component */
+@media(max-width: 1024px){
+    .middle-footer.right-column,
+    .middle-footer.service-column,
+    .bottom-footer{
+        white-space: nowrap;
+    }
+
+    .top-footer{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .top-footer .right-column{
+        margin-bottom: 25px;
+    }
+}
+
+@media(max-width: 768px){
+    .middle-footer .left-column{
+        display: none;
+    }
+
+    .bottom-footer .legal{
+        display: none;
+    }
+}
+
+/* Home Component */
+@media(max-width: 1200px){
+    .home-tabs-nav{
+        width: 100%;
+    }
+
+    .tab-left{
+        width: 100%;
+    }
+}
+
+@media(max-width:1024px){
+    .the-brand-blurb{
+        flex-direction: column;
+    }
+
+    .the-brand-left,
+    .the-brand-right{
+        width: 100%;
+        margin: auto;
+    }
+
+    .the-brand-left{
+        margin-bottom: 25px;
+    }
+
+    .the-brand-right-text{
+        float: none;
+    }
+
+    .the-brand-right p{
+        margin-bottom: 25px;
+    }
+
+    .what-we-do{
+        flex-direction: column;
+    }
+
+    .what-we-do-left,
+    .what-we-do-right{
+        width: 100%;
+    }
+
+    .what-we-do-left{
+        margin-bottom: 25px;
+    }
+
+    .what-we-do-right-text{
+        float: none;
+    }
+
+    .what-we-do-right p{
+        margin-bottom: 25px;
+    }
+}
+
+@media(max-width: 1000px){
+    .industry-grid{
+        width: 100%;
+    }
+
+    .industry-grid .grid-left,
+    .industry-grid .grid-right{
+        flex-direction: column;
+    }
+
+    .industry-card{
+        margin: 0;
+    }
+}
+
+@media(max-width: 768px){
+    .hero-section{
+        flex-direction: column-reverse;
+        height: 100%;
+        margin-bottom: 50px;
+    }
+
+    .hero-left,
+    .hero-right{
+        width: 100%;
+    }
+
+    .scroll-indicator{
+        padding-top: 100px;
+    }
+
+    .image2{
+        display: none;
+    }
+
+    .image1{
+        width: 100%;
+    }
+
+    .random-blurb{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .industry-grid,
+    .industry-card{
+        width: 100%;
+    }
+
+    .home-tabs-nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tab-content{
+        flex-direction: column;
+    }
+
+    .tab-left,
+    .tab-right{
+        width: 100%;
+    }
+
+    .tab-left{
+        margin-bottom: 25px;
+    }
+
+    .tab-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .the-brand-left-text,
+    .the-brand-right-text,
+    .what-we-do-left-text,
+    .what-we-do-right-text{
+        width: 100%;
+    }
+}
+
+@media(hover : hover){
+    .card-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(14, 14, 14, 0.6);
+        opacity: 0;
+        transition: opacity 0.25s ease-in-out;
+        overflow: hidden;
+    }
+    
+    .card-overlay p{
+        background: none;
+        padding: 5px 25px;
+        overflow: hidden;
+    }
+    
+    .card-overlay .industry-description{
+        width: 80%;
+        overflow: hidden;
+    }
+    
+    .blur{
+        backdrop-filter: blur(3px);
+        overflow: hidden;
+    }
+    
+    .card-overlay > * {
+        transform: translateY(20px);
+        transition: transform 0.25s;
+        overflow: hidden;
+    }
+    
+    .card-overlay:hover {
+        opacity: 1;
+        overflow: hidden;
+    }
+    
+    .card-overlay:hover{
+        transform: translateY(0);
+        overflow: hidden;
+    }
+    
+    .card-overlay p:hover{
+        opacity: 1;
+        overflow: hidden;
+    }
+}
+
+/* Consultation Component */
+@media(max-width: 1200px) and (min-width: 1000px){
+    .form-row{
+        flex-direction: column;
+        margin: 0 !important;
+    }
+
+    .form-row .input-data{
+        margin-bottom: 15px !important;
+    }
+}
+@media(max-width: 1000px) and (min-width: 0px){
+    .contact-right{
+        display: none;
+    }
+    .contact-left{
+        width: 100%;
+    }
+
+    .form-row{
+        flex-direction: column;
+    }
+
 }
