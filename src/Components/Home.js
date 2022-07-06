@@ -11,25 +11,34 @@ import Image2 from '../Images/image2.png'
 import FoodBev from '../Images/foodbev.png'
 import NonProfit from '../Images/nonprofit.png'
 import Cannabis from '../Images/cannabis.png'
-import Tech from '../Images/technology.png'
-import ParticleShape from './ParticleShape'
+import Tech from '../Images/technology.jpg'
+import AllTabs from '../Components/Tabs/AllTabs'
+import HeroImg from '../Components/HeroImg'
+// import ParticleShape from './ParticleShape'
+// import homepagedata from '../Data/homepage'
+// import HomeServiceInfo from './HomeServiceInfo'
 
 
 
 const Home = () => {
-    // const cards = data.map(item => {
+    // const infoTab = homepagedata.map(item => {
     //     return(
-    //       <HomeServiceInfo
-    //         imageUrl={item.imageUrl}
-    //         title={item.title}
-    //         location={item.location}
-    //         googleMapsUrl={item.googleMapsUrl}
-    //         startDate={item.startDate}
-    //         endDate={item.endDate}
-    //         description={item.description}
-    //       />
+    //         <HomeServiceInfo
+    //             headline={item.headline}
+    //             description={item.description}
+    //             cardImg={item.img}
+    //             cardTitle={item.cardTitle}
+    //             cardBody={item[2].cardBody}
+    //         />,
+    //         <HomeServiceInfo
+    //             headline={item.headline}
+    //             description={item.description}
+    //             cardImg={item.img}
+    //             cardTitle={item.cardTitle}
+    //             cardBody={item[1].cardBody}
+    //         />
     //     )
-    //   })
+    // })
 
     return(
         <div className="home">
@@ -43,14 +52,19 @@ const Home = () => {
                             free brand audit today and find clarity.
                         </p>
                         <ConsultationBtn />
-                        {/* Insert Scroll Indicator */}
+                        <div className="scroll-indicator">
+                            <div className="dots"></div>
+                        </div>
                     </div>
-                    <ParticleShape/>
+                    <div className="hero-right">
+                        {/* <ParticleShape/> */}
+                        <HeroImg />
+                    </div>
                 </div>
             </div>
-            <div className="service-loop">
-                {/* Insert Infinite Service Loop */}
-            </div>
+
+            {/* Insert Infinite Scroll */}
+
             <div className="container">
                 <div className="the-brand-blurb">
                     <div className="the-brand-left">
@@ -71,8 +85,8 @@ const Home = () => {
                 </div>
             </div>
             <div className="image-container">
-                    <img src={Image1} className="image1" />
-                    <img src={Image2} className="image2" />
+                <div className="image1"></div>
+                <div className="image2"></div>
             </div>
                 <div className="container">
                 <div className="random-blurb">
@@ -88,22 +102,58 @@ const Home = () => {
                             Don't see your industry? We can still provide clarity.
                         </p>
                     </div>
-                    <div className="industry-img-grid">
-                        <div className="industry-card food-bev">
-                            <div className="nav-link">Food & Beverage</div>
-                            {/* insert image prop */}
+                    <div className="industry-grid">
+                        <div className="left-grid">
+                            <div className="industry-card food-bev">
+                                <img src={FoodBev}className="industry-img food-bev-img" />
+                                <div className="card-overlay blur">
+                                    <p className="industry-title body-lg">Food & Beverage</p>
+                                    <p className="industry-description body-sm">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                        Dolorem sit perspiciatis quaerat mollitia quam. Facilis 
+                                        assumenda consequuntur impedit enim voluptate! Nisi, repellat 
+                                        eveniet at modi facere voluptatem veritatis dicta ab!
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="industry-card non-profit">
+                                <img src={NonProfit}className="industry-img non-profit-img" />
+                                <div className="card-overlay blur">
+                                    <p className="industry-title body-lg">Non-Profit</p>
+                                    <p className="industry-description body-sm">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                        Dolorem sit perspiciatis quaerat mollitia quam. Facilis 
+                                        assumenda consequuntur impedit enim voluptate! Nisi, repellat 
+                                        eveniet at modi facere voluptatem veritatis dicta ab!
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="industry-card food-bev">
+                                <img src={Cannabis}className="industry-img cannabis-img" />
+                                <div className="card-overlay blur">
+                                    <p className="industry-title body-lg">Cannabis</p>
+                                    <p className="industry-description body-sm">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                        Dolorem sit perspiciatis quaerat mollitia quam. Facilis 
+                                        assumenda consequuntur impedit enim voluptate! Nisi, repellat 
+                                        eveniet at modi facere voluptatem veritatis dicta ab!
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="industry-card non-profit">
-                            <div className="nav-link">Non-Profit</div>
-                            {/* insert image prop */}
-                        </div>
-                        <div className="industry-card cannabis">
-                            <div className="nav-link">Cannabis</div>
-                            {/* insert image prop */}
-                        </div>
+                        <div className="right-grid">
                         <div className="industry-card tech">
-                            <div className="nav-link">Technology</div>
-                            {/* insert image prop */}
+                                <img src={Tech}className="industry-img tech-img" />
+                                <div className="card-overlay blur">
+                                    <p className="industry-title body-lg">Technology</p>
+                                    <p className="industry-description body-sm">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                        Dolorem sit perspiciatis quaerat mollitia quam. Facilis 
+                                        assumenda consequuntur impedit enim voluptate! Nisi, repellat 
+                                        eveniet at modi facere voluptatem veritatis dicta ab!
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,24 +178,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="services-section">
-                    <div className="services-tab">
-                        <div className="services-tabs">
-                            <h4 className="branding-tab">Branding</h4>
-                            <h4 className="products-tab">Digital Products</h4>
-                            <h4 className="marketing-tab">Digital Marketing</h4>
-                        </div>
-                        <div className="tab-active">
-                            {/* insert small diamond based on active tag */}
-                        </div>
-                    </div>
-                    <div className="service-info">
-                        <div className="service-info-left">
-
-                        </div>
-                        <div className="service-info-right">
-
-                        </div>
-                    </div>
+                    <AllTabs/>
                 </div>
                 {/* Insert Blog Section Here */}
                 </div>

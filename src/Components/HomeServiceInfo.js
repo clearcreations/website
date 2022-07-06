@@ -1,5 +1,6 @@
 import React from 'react'
 import LearnMoreBtn from './LearnMoreBtn';
+import '../App.css'
 
 const HomeServiceInfo = (props) => {
     return(
@@ -11,9 +12,13 @@ const HomeServiceInfo = (props) => {
             </div>
             <div className="info-right">
                 <div className="info-card">
-                    <img src={props.cardImg} className="info-card-img" />
-                    <h4>{props.headline}</h4>
-                    <p className="body-sm">{props.description}</p>
+                    <div className="info-card-img">
+                        <img src={props.cardImg} className="info-card-img" />
+                    </div>
+                    <div className="info-card-text">
+                        <h4>{props.cardTitle}</h4>
+                        <p className="body-sm">{props.cardBody}</p>
+                    </div>
                 </div>
             </div>
         </div>
